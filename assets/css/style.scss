@@ -5,6 +5,7 @@
 
 details > summary:first-of-type {
     display: list-item;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 64em) {
