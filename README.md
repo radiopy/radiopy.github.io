@@ -3,7 +3,7 @@
 Hi there. This is not finished yet, but the result might somewhat look like this.
 
 <details>
-<summary>Expand</summary>
+<summary>![radiopy](https://avatars.githubusercontent.com/u/132282159) Expand</summary>
 <ul>
 <details>
 <summary>Expand again</summary>
