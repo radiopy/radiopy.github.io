@@ -80,5 +80,3 @@ Hi there. This is not finished yet, but the result might somewhat look like this
     console.log("hi");
     main();
 </script>
-
-</ul>
