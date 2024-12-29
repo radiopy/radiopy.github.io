@@ -1,6 +1,24 @@
 # Radiopy
 
-Hi there. This is not finished yet, but the result might somewhat look like this.
+Radiopy is a project which lets you listen music from radio stations within Spotify.
+<br>
+<details>
+    <summary>How does it work?</summary>
+    Many radio stations have a playlist feature where you can see what songs have been played at what time.
+    My script uses this feature to find out what has been playing all week. It then looks up those songs on Spotify and returns an updated playlist.
+    These playlists are updated once a week.
+</details>
+
+<details>
+    <summary>But why the effort?</summary>
+    I started this project because I wanted to know what was playing on the radio without having to tune in.
+    I somewhat dislike moderators, commercials, already shortened songs being shortened *again* by the station, unnecessary sound effects between songs, ...
+    Besides, I already pay for Spotify, so why not?
+    <br>
+    Also it's fun.
+</details>
+
+Here's a collection of all radio stations that the project currently supports:
 
 <div class="channels"></div>
 <script>
@@ -19,9 +37,7 @@ Hi there. This is not finished yet, but the result might somewhat look like this
     function createObjects(data) {
         const objects = [];
         data.forEach(function (item, index) {
-            const newUl = document.createElement("ul");
             const newObject = document.createElement("details");
-            newUl.append(newObject);
             const newSummary = document.createElement("summary");
             newObject.append(newSummary);
             if ("image" in item) {
@@ -58,10 +74,12 @@ Hi there. This is not finished yet, but the result might somewhat look like this
             }
             if ("children" in item) {
                 createObjects(item["children"]).forEach(function (child, index) {
-                    newObject.appendChild(child);
+                    const newUl = document.createElement("ul");
+                    newUl.appendChild(child);
+                    newObject.appendChild(newUl);
                 });
             }
-            objects.push(newUl);
+            objects.push(newObject);
         })
         return objects;
     }
